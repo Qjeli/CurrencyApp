@@ -1,0 +1,45 @@
+<Page
+    x:Class="CurrencyApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <NavigationView
+        x:Name="NavView"
+        SelectionChanged="NavView_SelectionChanged"
+        IsBackButtonVisible="Collapsed"
+        PaneDisplayMode="Left"
+        OpenPaneLength="220"
+        Background="#F0F4F8">
+
+        <!-- Header bar -->
+        <NavigationView.Header>
+            <TextBlock Text="Курсы валют ЦБ РФ"
+                       Style="{StaticResource TitleTextBlockStyle}"
+                       Margin="12,8" Foreground="#2C3E50"/>
+        </NavigationView.Header>
+
+        <!-- Navigation items -->
+        <NavigationView.MenuItems>
+            <NavigationViewItem Tag="CurrencyListPage" Content="Список валют">
+                <NavigationViewItem.Icon>
+                    <FontIcon Glyph="&#xE8A5;"/>
+                </NavigationViewItem.Icon>
+            </NavigationViewItem>
+
+            <NavigationViewItem Tag="AddCurrencyPage" Content="Добавить валюту">
+                <NavigationViewItem.Icon>
+                    <FontIcon Glyph="&#xE710;"/>
+                </NavigationViewItem.Icon>
+            </NavigationViewItem>
+
+            <NavigationViewItem Tag="SettingsPage" Content="Настройки">
+                <NavigationViewItem.Icon>
+                    <FontIcon Glyph="&#xE713;"/>
+                </NavigationViewItem.Icon>
+            </NavigationViewItem>
+        </NavigationView.MenuItems>
+
+        <!-- Main content frame -->
+        <Frame x:Name="ContentFrame" Margin="0"/>
+    </NavigationView>
+</Page>
