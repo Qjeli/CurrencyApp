@@ -1,7 +1,9 @@
 using CurrencyApp.Services;
+using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Navigation;
 
 namespace CurrencyApp
 {
@@ -13,9 +15,7 @@ namespace CurrencyApp
             get
             {
                 if (_localSettings == null)
-                {
                     _localSettings = new LocalSettingsService();
-                }
                 return _localSettings;
             }
         }

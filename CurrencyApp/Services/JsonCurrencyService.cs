@@ -25,13 +25,13 @@ namespace CurrencyApp.Services
         {
             try
             {
-                var folder = ApplicationData.Current.LocalFolder; // Получаем папку для хранения данных приложения
-                var item = await folder.TryGetItemAsync(JsonFile); // Проверяем, существует ли файл
+                var folder = ApplicationData.Current.LocalFolder; // Get the local folder for the application
+                var item = await folder.TryGetItemAsync(JsonFile); // Check if the JSON file exists
                 if (item is StorageFile file)
                 {
                     var json = await FileIO.ReadTextAsync(file);
                     _cache = JsonConvert.DeserializeObject<List<Currency>>(json) ?? new List<Currency>();
-                    _nextId = _cache.Count > 0 ? _cache.Max(c => c.Id) + 1 : 1; // Устанавливаем следующий ID на основе максимального существующего
+                    _nextId = _cache.Count > 0 ? _cache.Max(c => c.Id) + 1 : 1; // Set next ID based on existing currencies
                 }
                 else
                 {

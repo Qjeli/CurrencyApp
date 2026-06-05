@@ -1,5 +1,6 @@
 <Page
     x:Class="CurrencyApp.Views.CurrencyListPage"
+    x:Name="PageRoot"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:models="using:CurrencyApp.Models"
@@ -66,37 +67,18 @@
                                 <ColumnDefinition Width="Auto"/>
                             </Grid.ColumnDefinitions>
 
-                            <!-- Badge -->
-                            <Border Grid.Column="0"
-                                    CornerRadius="6" Padding="8,4" Margin="0,0,12,0"
-                                    VerticalAlignment="Center">
-                                <TextBlock Text="{x:Bind CharCode}"
-                                           Foreground="White" FontWeight="Bold" FontSize="13"/>
-                            </Border>
-
                             <!-- Name & nominal -->
                             <StackPanel Grid.Column="1" VerticalAlignment="Center">
                                 <TextBlock Text="{x:Bind Name}" FontWeight="SemiBold"
                                            Foreground="#2C3E50" TextWrapping="Wrap"/>
                                 <TextBlock Text="{x:Bind NominalStr}" FontSize="11" Foreground="#95A5A6"/>
                             </StackPanel>
-
-                            <!-- Value -->
-                            <StackPanel Grid.Column="2" VerticalAlignment="Center" Margin="0,0,12,0"
-                                        HorizontalAlignment="Right">
-                                <TextBlock Text="{x:Bind ValueFormatted}"
-                                           FontWeight="Bold" FontSize="15" Foreground="#2C3E50"
-                                           HorizontalAlignment="Right"/>
-                                <TextBlock Text="{x:Bind ChangeStr}"
-                                           FontSize="12" HorizontalAlignment="Right"/>
-                            </StackPanel>
-
                             <!-- Delete button -->
                             <Button Grid.Column="4"
-                                    Background="Transparent" BorderThickness="0"
-                                    VerticalAlignment="Center"
+                                    Command="{Binding DataContext.DeleteCommand, ElementName=PageRoot}"
                                     CommandParameter="{Binding}"
-                                    Command="{Binding DataContext.DeleteCommand, ElementName=PageRoot}">
+                                    Background="Transparent" BorderThickness="0"
+                                    VerticalAlignment="Center">
                                 <FontIcon Glyph="&#xE74D;" FontSize="14" Foreground="#E74C3C"/>
                             </Button>
                         </Grid>
