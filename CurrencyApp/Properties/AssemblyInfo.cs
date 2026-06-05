@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // атрибутов. Отредактируйте значения этих атрибутов, чтобы изменить
 // сведений о сборке.
 [assembly: AssemblyTitle("CurrencyApp")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Application for working with world currencies")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("CurrencyApp")]
 [assembly: AssemblyProduct("CurrencyApp")]
-[assembly: AssemblyCopyright("Copyright ©  2026")]
+[assembly: AssemblyCopyright("Copyright © 2026")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

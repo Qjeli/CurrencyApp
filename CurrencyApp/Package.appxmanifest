@@ -8,14 +8,14 @@
 
   <Identity
     Name="7ebafb07-0cad-44d5-966c-04f55882b601"
-    Publisher="CN=Japanese"
-    Version="1.0.0.0" />
+    Publisher="CN=Qjeli"
+    Version="1.0.2.0" />
 
   <mp:PhoneIdentity PhoneProductId="7ebafb07-0cad-44d5-966c-04f55882b601" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>CurrencyApp</DisplayName>
-    <PublisherDisplayName>Japanese</PublisherDisplayName>
+    <PublisherDisplayName>CurrencyApp</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 
