@@ -44,11 +44,11 @@ namespace CurrencyApp.ViewModels
             ErrorMessage = string.Empty;
             SuccessMessage = string.Empty;
 
-            // Валидация
+            // Validation
             if (string.IsNullOrWhiteSpace(CharCode)) { ErrorMessage = "Укажите код валюты (например, USDT)"; return; }
             if (string.IsNullOrWhiteSpace(Name)) { ErrorMessage = "Укажите название валюты"; return; }
 
-            // Заменяем запятую на точку для корректного парсинга
+            // Changing comma to dot for invariant parsing, and validating that it's a positive number
             var valueStr = ValueText?.Replace(',', '.') ?? "";
             if (!double.TryParse(valueStr, NumberStyles.Any, CultureInfo.InvariantCulture, out double value) || value <= 0)
             { ErrorMessage = "Введите корректный курс (число > 0)"; return; }

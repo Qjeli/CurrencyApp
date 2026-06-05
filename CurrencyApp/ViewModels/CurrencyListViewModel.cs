@@ -131,19 +131,11 @@ namespace CurrencyApp.ViewModels
 
         private async Task DeleteAsync(object obj)
         {
-            // Добавь эти строки временно
-            System.Diagnostics.Debug.WriteLine($"DeleteAsync вызван, obj = {obj}");
-
             if (obj is Currency c)
             {
-                System.Diagnostics.Debug.WriteLine($"Удаляем Id={c.Id}, CharCode={c.CharCode}");
                 await _storage.DeleteCurrencyAsync(c.Id);
                 Currencies.Remove(c);
                 StatusMessage = $"Валюта {c.CharCode} удалена.";
-            }
-            else
-            {
-                System.Diagnostics.Debug.WriteLine($"obj НЕ является Currency, тип = {obj?.GetType()}");
             }
         }
     }
